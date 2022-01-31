@@ -1,6 +1,8 @@
 package com.cake.manager.cake.domain;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,11 +15,13 @@ import javax.persistence.Id;
  */
 @Entity
 @Data
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Cake {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
-    private Integer employeeId;
+    private Integer id;
 
     @Column(name = "title", unique = true, nullable = false, length = 100)
     private String title;
